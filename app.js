@@ -26,10 +26,15 @@ async function init() {
                 const employeeRes = await connection.query("SELECT * FROM employee");
                 console.table(employeeRes);
                 break;
-            // case 0:                         // if (day == 0)
-            //     text = "Sunday";
-            //     break;
-            default:                        // else...
+            case "view departments":
+                const departmentRes = await connection.query("SELECT * FROM department");
+                console.table(departmentRes);
+                break;
+            case "view roles":
+                const roleRes = await connection.query("SELECT * FROM role");
+                console.table(roleRes);
+                break;
+            default:
                 init();
         }
 
