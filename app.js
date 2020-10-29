@@ -51,7 +51,6 @@ async function init() {
                 break;
             case "update employee roles":
                 updateEmpRole();
-                init();
                 break;
 
             default:
@@ -151,6 +150,42 @@ async function init() {
             init();
         });
     };
-    // function updateEmpRole() {
+    function updateEmpRole() {
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "First name of employeee?",
+                name: "empfirstUpdate"
 
-}
+            },
+            {
+                type: "input",
+                message: "Last name of employeee?",
+                name: "emplastUpdate"
+
+            },
+            {
+                type: "input",
+                message: "What role would you like to update them to?",
+                name: "roleUpdate"
+
+            }
+        ]).then(function (answers) {
+            connection.query("UPDATE INTO role SET ?",
+                {
+                    title: answers.roleUpdate,
+                    first_name: answers.empfirstUpdate,
+                    last_name: answers.emplastUpdate
+                },
+                function (err, answers) {
+                    if (err) {
+                        throw err;
+                    }
+                    console.table(answers);
+                }
+            );
+            init();
+        });
+    };
+
+};
