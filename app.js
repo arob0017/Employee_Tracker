@@ -117,5 +117,40 @@ async function init() {
             init();
         });
     };
+    function addRole() {
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "Enter role title:",
+                name: "roleTitle"
+            },
+            {
+                type: "input",
+                message: "Enter role's salary:",
+                name: "roleSalary"
+            },
+            {
+                type: "input",
+                message: "Enter role's department_id:",
+                name: "roleDept"
+            }
+        ]).then(function (answers) {
+            connection.query("INSERT INTO role SET ?",
+                {
+                    title: answers.roleTitle,
+                    salary: answers.roleSalary,
+                    department_id: answers.roleDept
+                },
+                function (err, answers) {
+                    if (err) {
+                        throw err;
+                    }
+                    console.table(answers);
+                }
+            );
+            init();
+        });
+    };
+    // function updateEmpRole() {
 
 }
