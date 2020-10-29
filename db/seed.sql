@@ -17,17 +17,26 @@ VALUES
 ("Software Engineer",120000.0,2),
 ("Accountant",125000.0,3);
 
-INSERT INTO employee (first_name,last_name,role_id,manager_id)
+INSERT INTO employee (first_name,last_name,role_id)
 VALUES
-("John","Doe",4,3),
-("Mike","Chan",5,1),
-("Ashley","Rodriguez",1,NULL),
-("Kevin","Tupik",6,3),
-("Malia","Brown",7,NULL),
-("Sarah","Lourd",2,NULL),
-("Christrian","Eckenrode",1,2),
-("Tom","Allen",3,7),
-("Tammer","Galal",6,4);
+("Ashley","Rodriguez",1),
+("Malia","Brown",7),
+("Sarah","Lourd",2),
+("Mike","Chan",5),
+("John","Doe",4),
+("Kevin","Tupik",6)
+("Christrian","Eckenrode",1)
+("Tom","Allen",3),
+("Tammer","Galal",6);
+-- ("John","Doe",4,3),
+-- ("Mike","Chan",5,1),
+-- ("Ashley","Rodriguez",1,NULL),
+-- ("Kevin","Tupik",6,3),
+-- ("Malia","Brown",7,NULL),
+-- ("Sarah","Lourd",2,NULL),
+-- ("Christrian","Eckenrode",1,2),
+-- ("Tom","Allen",3,7),
+-- ("Tammer","Galal",6,4);
 
 SELECT * FROM employee;
 SELECT * FROM role;
